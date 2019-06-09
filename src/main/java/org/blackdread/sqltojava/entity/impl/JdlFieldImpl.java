@@ -1,7 +1,5 @@
 package org.blackdread.sqltojava.entity.impl;
 
-import org.blackdread.sqltojava.entity.JdlField;
-import org.blackdread.sqltojava.entity.JdlFieldEnum;
 import org.apache.commons.lang3.StringUtils;
 import org.blackdread.sqltojava.entity.JdlField;
 import org.blackdread.sqltojava.entity.JdlFieldEnum;

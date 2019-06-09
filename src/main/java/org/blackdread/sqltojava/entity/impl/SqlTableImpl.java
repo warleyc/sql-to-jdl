@@ -1,6 +1,5 @@
 package org.blackdread.sqltojava.entity.impl;
 
-import org.blackdread.sqltojava.entity.SqlTable;
 import org.apache.commons.lang3.StringUtils;
 import org.blackdread.sqltojava.entity.SqlTable;
 

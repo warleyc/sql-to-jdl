@@ -1,9 +1,6 @@
 package org.blackdread.sqltojava.entity.impl;
 
 import com.google.common.collect.ImmutableList;
-import org.blackdread.sqltojava.entity.JdlEntity;
-import org.blackdread.sqltojava.entity.JdlField;
-import org.blackdread.sqltojava.entity.JdlRelation;
 import org.apache.commons.lang3.StringUtils;
 import org.blackdread.sqltojava.entity.JdlEntity;
 import org.blackdread.sqltojava.entity.JdlField;

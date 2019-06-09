@@ -26,7 +26,6 @@ public class SqlToJavaApplication implements CommandLineRunner {
 
     private final InformationSchemaService informationSchemaService;
 
-    private final SqlService sqlService;
 
     private final JdlService jdlService;
 
@@ -36,7 +35,6 @@ public class SqlToJavaApplication implements CommandLineRunner {
         this.applicationProperties = applicationProperties;
         this.informationSchemaRepository = informationSchemaRepository;
         this.informationSchemaService = informationSchemaService;
-        this.sqlService = sqlService;
         this.jdlService = jdlService;
         this.exportService = exportService;
     }

@@ -1,8 +1,6 @@
 package org.blackdread.sqltojava.util;
 
 import com.google.common.base.CaseFormat;
-import org.blackdread.sqltojava.entity.SqlColumn;
-import org.blackdread.sqltojava.entity.SqlTable;
 import org.apache.commons.lang3.StringUtils;
 import org.blackdread.sqltojava.entity.SqlColumn;
 import org.blackdread.sqltojava.entity.SqlTable;

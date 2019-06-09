@@ -3,7 +3,6 @@ package org.blackdread.sqltojava.service;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Streams;
 import org.blackdread.sqltojava.entity.JdlFieldEnum;
-import org.blackdread.sqltojava.entity.JdlFieldEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

@@ -15,15 +15,12 @@ import java.util.List;
 @ConfigurationProperties(prefix = "application", ignoreUnknownFields = false)
 public class ApplicationProperties {
 
+    private final Export export = new Export();
     /**
      * Database name to export to JDL
      */
     private String databaseToExport;
-
     private List<String> ignoredTableNames;
-
-    private final Export export = new Export();
-
 
     public String getDatabaseToExport() {
         return databaseToExport;

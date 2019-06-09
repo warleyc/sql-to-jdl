@@ -17,7 +17,7 @@ public enum RelationType {
     ManyToMany;
     // OneToMany is not put as we always use ManyToOne
 
-    public String toJdl(){
+    public String toJdl() {
         return this.name();
     }
 }

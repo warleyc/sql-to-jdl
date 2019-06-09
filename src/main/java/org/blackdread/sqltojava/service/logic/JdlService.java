@@ -1,13 +1,7 @@
 package org.blackdread.sqltojava.service.logic;
 
 import org.apache.commons.lang3.StringUtils;
-import org.blackdread.sqltojava.entity.JdlEntity;
-import org.blackdread.sqltojava.entity.JdlField;
-import org.blackdread.sqltojava.entity.JdlFieldEnum;
-import org.blackdread.sqltojava.entity.JdlRelation;
-import org.blackdread.sqltojava.entity.RelationType;
-import org.blackdread.sqltojava.entity.SqlColumn;
-import org.blackdread.sqltojava.entity.SqlTable;
+import org.blackdread.sqltojava.entity.*;
 import org.blackdread.sqltojava.entity.impl.JdlEntityImpl;
 import org.blackdread.sqltojava.entity.impl.JdlFieldImpl;
 import org.blackdread.sqltojava.entity.impl.JdlRelationImpl;
@@ -41,6 +35,10 @@ public class JdlService {
         this.sqlJdlTypeService = sqlJdlTypeService;
     }
 
+    private static String getEntityNameFormatted(final String name) {
+        return StringUtils.capitalize(SqlUtils.changeToCamelCase(name));
+    }
+
     public List<JdlEntity> buildEntities() {
         final List<SqlColumn> sqlColumns = sqlService.buildColumns();
         return SqlUtils.groupColumnsByTable(sqlColumns).entrySet().stream()
@@ -72,10 +70,6 @@ public class JdlService {
             sqlService.isEnumTable(entry.getKey().getName()),
             sqlService.isPureManyToManyTable(entry.getKey().getName()),
             relations);
-    }
-
-    private static String getEntityNameFormatted(final String name) {
-        return StringUtils.capitalize(SqlUtils.changeToCamelCase(name));
     }
 
     /**

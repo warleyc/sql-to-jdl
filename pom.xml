@@ -25,7 +25,7 @@
         <guava.version>27.1-jre</guava.version>
 
         <skip.jooq.generation>false</skip.jooq.generation>
-        <database.url>jdbc:mysql://localhost:3306/</database.url>
+        <database.url>jdbc:sqlite:./src/main/resources/asset_android.db</database.url>
 
         <!--<jacoco-plugin.version>0.7.9</jacoco-plugin.version>-->
         <!--<coveralls-plugin.version>4.3.0</coveralls-plugin.version>-->
@@ -71,14 +71,14 @@
             <version>${guava.version}</version>
         </dependency>
 
+
+        <!-- https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc -->
         <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.27.2.1</version>
         </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -88,10 +88,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-integration</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework.retry</groupId>
             <artifactId>spring-retry</artifactId>
@@ -157,19 +154,17 @@
                 </executions>
                 <configuration>
                     <jdbc>
-                        <driver>com.mysql.cj.jdbc.Driver</driver>
+                        <driver>org.sqlite.JDBC</driver>
                         <url>${database.url}</url>
-                        <user>root</user>
-                        <password></password>
                     </jdbc>
                     <generator>
                         <name>org.jooq.codegen.JavaGenerator</name>
                         <database>
-                            <name>org.jooq.meta.mysql.MySQLDatabase</name>
+                            <name>org.jooq.meta.sqlite.SQLiteDatabase</name>
                             <includes>.*</includes>
                             <excludes></excludes>
                             <!--<inputSchema></inputSchema>--> <!-- This will generate all schema of db, better to only generate the one interested in -->
-                            <inputSchema>information_schema</inputSchema>
+                            <inputSchema></inputSchema>
                         </database>
                         <target>
                             <packageName>org.blackdread.sqltojava.jooq</packageName>

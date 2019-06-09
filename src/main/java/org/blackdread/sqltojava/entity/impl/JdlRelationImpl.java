@@ -1,7 +1,5 @@
 package org.blackdread.sqltojava.entity.impl;
 
-import org.blackdread.sqltojava.entity.JdlRelation;
-import org.blackdread.sqltojava.entity.RelationType;
 import org.apache.commons.lang3.StringUtils;
 import org.blackdread.sqltojava.entity.JdlRelation;
 import org.blackdread.sqltojava.entity.RelationType;
