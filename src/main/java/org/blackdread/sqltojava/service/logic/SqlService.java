@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+//import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
 import java.util.List;
@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
  * @author Yoann CAPLAIN
  */
 @Service
-@Transactional(readOnly = true)
+//@Transactional(readOnly = true)
 public class SqlService {
 
     private static final Logger log = LoggerFactory.getLogger(SqlService.class);

@@ -6,7 +6,7 @@ import org.blackdread.sqltojava.repository.InformationSchemaRepository;
 import org.blackdread.sqltojava.service.InformationSchemaService;
 import org.blackdread.sqltojava.service.logic.ExportService;
 import org.blackdread.sqltojava.service.logic.JdlService;
-import org.blackdread.sqltojava.service.logic.SqlService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -31,7 +31,7 @@ public class SqlToJavaApplication implements CommandLineRunner {
 
     private final ExportService exportService;
 
-    public SqlToJavaApplication(final ApplicationProperties applicationProperties, final InformationSchemaRepository informationSchemaRepository, final InformationSchemaService informationSchemaService, final SqlService sqlService, final JdlService jdlService, final ExportService exportService) {
+    public SqlToJavaApplication(final ApplicationProperties applicationProperties, final InformationSchemaRepository informationSchemaRepository, final InformationSchemaService informationSchemaService, final JdlService jdlService, final ExportService exportService) {
         this.applicationProperties = applicationProperties;
         this.informationSchemaRepository = informationSchemaRepository;
         this.informationSchemaService = informationSchemaService;

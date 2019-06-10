@@ -120,7 +120,7 @@ public class SqlJdlTypeService {
     }
 
     protected List<String> jdlTextBlob() {
-        return Lists.newArrayList("longtext");
+        return Lists.newArrayList("longtext","clob");
     }
 
     protected List<String> jdlInteger() {

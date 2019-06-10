@@ -1,4 +1,12 @@
+spring:
+    datasource:
+            type: com.zaxxer.hikari.HikariDataSource
+            url: jdbc:mysql://localhost:3306/?useUnicode=true&characterEncoding=utf8&useSSL=false
 application:
+    database-to-export: my_database_name
+    ignored-table-names:
+        - databasechangelog
+        - databasechangeloglock
     export:
         path: ./my-project-jdl.jh
         type: jdl
