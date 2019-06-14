@@ -67,7 +67,6 @@ public class JdlService {
             getEntityNameFormatted(entry.getKey().getName()),
             fields,
             entry.getKey().getComment().orElse(null),
-            sqlService.isEnumTable(entry.getKey().getName()),
             sqlService.isPureManyToManyTable(entry.getKey().getName()),
             relations);
     }
@@ -83,17 +82,11 @@ public class JdlService {
         final String comment;
         String pattern = null;
 
-        if (sqlService.isEnumTable(column.getTable().getName()))
-            return Optional.empty();
 
 
         if (column.isForeignKey()) {
             // check if table referenced is an enum, otherwise, skip
             final SqlTable tableOfForeignKey = sqlService.getTableOfForeignKey(column);
-            if (!sqlService.isEnumTable(tableOfForeignKey.getName())) {
-                log.info("Skipped field of ({}) as ({}) is not an enum table", column, tableOfForeignKey);
-                return Optional.empty();
-            }
             jdlType = JdlFieldEnum.ENUM;
             name = SqlUtils.changeToCamelCase(SqlUtils.removeIdFromEnd(column.getName()));
             enumEntityName = StringUtils.capitalize(SqlUtils.changeToCamelCase(SqlUtils.removeIdFromEnd(tableOfForeignKey.getName())));
@@ -157,10 +150,6 @@ public class JdlService {
 
         final boolean isUnique = column.isUnique();
 
-        if (sqlService.isEnumTable(inverseSideTable.getName())) {
-            log.info("Skipped relation of ({}) as ({}) is an enum table", column, inverseSideTable);
-            return Optional.empty();
-        }
 
         final boolean isPureManyToManyTable = sqlService.isPureManyToManyTable(tableName);
 

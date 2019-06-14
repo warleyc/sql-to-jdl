@@ -27,17 +27,16 @@ public class JdlEntityImpl implements JdlEntity, Comparable<JdlEntity> {
 
     private final String comment;
 
-    private final boolean isEnum;
 
     private final boolean isPureManyToMany;
 
     private final List<JdlRelation> relations;
 
-    public JdlEntityImpl(final String name, final List<JdlField> fields, @Nullable final String comment, final boolean isEnum, final boolean isPureManyToMany, final List<JdlRelation> relations) {
+    public JdlEntityImpl(final String name, final List<JdlField> fields, @Nullable final String comment, final boolean isPureManyToMany, final List<JdlRelation> relations) {
         this.name = name;
         this.fields = ImmutableList.copyOf(fields);
         this.comment = (StringUtils.isBlank(comment) || "null".equalsIgnoreCase(comment)) ? null : comment;
-        this.isEnum = isEnum;
+
         this.isPureManyToMany = isPureManyToMany;
         this.relations = ImmutableList.copyOf(relations);
     }
@@ -57,10 +56,6 @@ public class JdlEntityImpl implements JdlEntity, Comparable<JdlEntity> {
         return Optional.ofNullable(comment);
     }
 
-    @Override
-    public boolean isEnum() {
-        return isEnum;
-    }
 
     @Override
     public boolean isPureManyToMany() {
@@ -78,7 +73,6 @@ public class JdlEntityImpl implements JdlEntity, Comparable<JdlEntity> {
             "name='" + name + '\'' +
             ", fields=" + fields +
             ", comment='" + comment + '\'' +
-            ", isEnum=" + isEnum +
             ", relations=" + relations +
             '}';
     }

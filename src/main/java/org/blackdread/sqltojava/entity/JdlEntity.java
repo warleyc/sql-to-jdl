@@ -14,8 +14,6 @@ public interface JdlEntity {
 
     Optional<String> getComment();
 
-    boolean isEnum();
-
     /**
      * A pure ManyToMany entity only contains 2 columns of foreign keys
      *

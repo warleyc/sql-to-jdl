@@ -80,9 +80,7 @@ public final class JdlUtils {
             builder.append(entity.getComment().get());
             builder.append(" */\n");
         }
-        if (entity.isEnum())
-            builder.append("enum ");
-        else
+
             builder.append("entity ");
         builder.append(entity.getName());
         builder.append(" {\n");
@@ -90,10 +88,10 @@ public final class JdlUtils {
             builder.append(writeField(field));
             builder.append(",\n");
         }
-        if (!entity.isEnum()) {
+
             // remove the last ','
             builder.deleteCharAt(builder.length() - 2);
-        }
+
         builder.append("}");
         return builder.toString();
     }

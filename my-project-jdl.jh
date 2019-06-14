@@ -1,0 +1,2772 @@
+entity MAchievement {
+	id MMission required,
+	achievementId TextBlob required,
+	name TextBlob required,
+	type Integer required,
+	missionId Integer required
+}
+
+entity MAction {
+	id Integer required,
+	name TextBlob required,
+	shortName TextBlob required,
+	nameRuby TextBlob required,
+	description TextBlob required,
+	effectDescription TextBlob required,
+	initialCommand Integer required,
+	rarity Integer required,
+	commandType Integer required,
+	ballConditionGround Integer required,
+	ballConditionLow Integer required,
+	ballConditionHigh Integer required,
+	staminaLvMin Integer required,
+	staminaLvMax Integer required,
+	powerLvMin Integer required,
+	powerLvMax Integer required,
+	blowOffCount Integer required,
+	mShootId Integer,
+	foulRate Integer required,
+	distanceDecayType Integer required,
+	activateCharacterCount Integer required,
+	actionCutId Integer required,
+	powerupGroup Integer
+}
+
+entity MActionLevel {
+	rarity Integer required,
+	level Integer required,
+	exp Integer required
+}
+
+entity MActionRarity {
+	rarity Integer required,
+	name TextBlob required
+}
+
+entity MActionSkillCutin {
+	actionCutId Integer required,
+	characterId Integer required,
+	cutName TextBlob required,
+	type Integer required,
+	startSynchronize Integer required,
+	finishSynchronize Integer required,
+	startDelay Integer required,
+	chapter1Character Integer,
+	chapter1Text TextBlob,
+	chapter1SoundEvent TextBlob,
+	chapter2Character Integer,
+	chapter2Text TextBlob,
+	chapter2SoundEvent TextBlob,
+	chapter3Character Integer,
+	chapter3Text TextBlob,
+	chapter3SoundEvent TextBlob,
+	chapter4Character Integer,
+	chapter4Text TextBlob,
+	chapter4SoundEvent TextBlob,
+	chapter5Character Integer,
+	chapter5Text TextBlob,
+	chapter5SoundEvent TextBlob,
+	synchronizeText TextBlob,
+	synchronizeSoundEvent TextBlob
+}
+
+entity MActionSkillHolderCardContent {
+	id MCharacter required,
+	targetCharaId Integer required,
+	actionMasterId Integer required,
+	actionSkillExp Integer required,
+	name TextBlob required,
+	description TextBlob required
+}
+
+entity MAdventQuestStage {
+	id MAdventQuestWorld required,
+	worldId Integer required,
+	number Integer required,
+	name TextBlob required,
+	imagePath TextBlob required,
+	characterThumbnailPath TextBlob required,
+	difficulty Integer required,
+	stageUnlockPattern Integer required,
+	storyOnly Integer required,
+	firstHalfNpcDeckId Integer required,
+	firstHalfEnvironmentId Integer required,
+	secondHalfNpcDeckId Integer required,
+	secondHalfEnvironmentId Integer required,
+	extraFirstHalfNpcDeckId Integer required,
+	extraSecondHalfNpcDeckId Integer required,
+	consumeAp Integer required,
+	kickOffType Integer required,
+	matchMinute Integer required,
+	enableExtra Integer required,
+	enablePk Integer required,
+	aiLevel Integer required,
+	startAtSecondHalf Integer required,
+	startScore Integer required,
+	startScoreOpponent Integer required,
+	conditionId Integer,
+	optionId Integer,
+	deckConditionId Integer
+}
+
+entity MAdventQuestStageReward {
+	stageId Integer required,
+	exp Integer required,
+	coin Integer required,
+	guildPoint Integer required,
+	clearRewardGroupId Integer required,
+	clearRewardWeightId Integer required,
+	achievementRewardGroupId Integer required,
+	coopGroupId Integer required,
+	specialRewardGroupId Integer,
+	specialRewardAmount Integer required,
+	goalRewardGroupId Integer
+}
+
+entity MAdventQuestTsubasaPointReward {
+	stageId Integer required,
+	tsubasaPoint Integer required,
+	contentType Integer required,
+	contentId Integer,
+	contentAmount Integer required
+}
+
+entity MAdventQuestWorld {
+	id Integer required,
+	setId Integer required,
+	number Integer required,
+	name TextBlob required,
+	symbolType Integer required,
+	imagePath TextBlob required,
+	description TextBlob required,
+	stageUnlockPattern Integer required,
+	arousalBanner TextBlob,
+	specialRewardContentType Integer,
+	specialRewardContentId Integer,
+	isEnableCoop Integer required
+}
+
+entity MAnnounceText {
+	groupId Integer required,
+	seqNo Integer required,
+	normalAnnounce TextBlob required,
+	criticalSAnnounce TextBlob required,
+	criticalMAnnounce TextBlob required,
+	criticalLAnnounce TextBlob required,
+	delayTime Integer,
+	continueTime Integer
+}
+
+entity MApRecoveryItem {
+	apRecoveryItemType Integer required,
+	name TextBlob required,
+	description TextBlob required,
+	thumbnailAssetName TextBlob required
+}
+
+entity MAreaActionWeight {
+	areaType Integer required,
+	dribbleRate Integer required,
+	passingRate Integer required,
+	onetwoRate Integer required,
+	shootRate Integer required,
+	volleyShootRate Integer required,
+	headingShootRate Integer required,
+	tackleRate Integer required,
+	blockRate Integer required,
+	passCutRate Integer required,
+	clearRate Integer required,
+	competeRate Integer required,
+	trapRate Integer required
+}
+
+entity MArousal {
+	id MPlayableCard required,
+	beforeId Integer required,
+	afterId Integer required,
+	cost Integer required,
+	materialGroupId Integer required
+}
+
+entity MArousalItem {
+	id Integer required,
+	name TextBlob required,
+	description TextBlob required,
+	thumbnailAssetName TextBlob required,
+	thumbnailBgAssetName TextBlob required,
+	thumbnailFrameAssetName TextBlob required,
+	arousalItemType Integer required
+}
+
+entity MArousalMaterial {
+	groupId Integer required,
+	contentType Integer required,
+	contentId Integer required,
+	contentAmount Integer required,
+	mainActionLevel Integer,
+	description TextBlob
+}
+
+entity MAsset {
+	id TextBlob required,
+	assetBundleName TextBlob required,
+	tag TextBlob required,
+	dependencies TextBlob required,
+	i18n Integer required,
+	platform TextBlob required,
+	packName TextBlob required,
+	head Integer required,
+	size Integer required,
+	key1 Integer required,
+	key2 Integer required
+}
+
+entity MAssetTagMapping {
+	tag Integer required,
+	ids TextBlob required
+}
+
+entity MBadge {
+	id Integer required,
+	name TextBlob required,
+	type Integer required,
+	description TextBlob required,
+	assetName TextBlob required
+}
+
+entity MCardIllustAssets {
+	id Integer required,
+	assetName TextBlob required,
+	subAssetName TextBlob,
+	offset TextBlob,
+	backgroundAssetName TextBlob required,
+	decorationAssetName TextBlob,
+	effectAssetName TextBlob
+}
+
+entity MCardLevel {
+	rarity Integer required,
+	level Integer required,
+	groupId Integer required,
+	exp Integer required
+}
+
+entity MCardPlayableAssets {
+	id Integer required,
+	cutinImageAssetName TextBlob required,
+	soundEventSuffix TextBlob
+}
+
+entity MCardPowerupActionSkill {
+	id MCardThumbnailAssets required,
+	name TextBlob required,
+	shortName TextBlob required,
+	description TextBlob required,
+	rarity Integer required,
+	attribute Integer required,
+	actionRarity Integer required,
+	gainActionExp Integer required,
+	coin Integer required,
+	sellMedalId Integer,
+	thumbnailAssetsId Integer required,
+	cardIllustAssetsId Integer required,
+	targetActionCommandType Integer,
+	targetCharacterId Integer
+}
+
+entity MCardRarity {
+	rarity Integer required,
+	name TextBlob required
+}
+
+entity MCardThumbnailAssets {
+	id Integer required,
+	thumbnailAssetName TextBlob required,
+	thumbnailFrameName TextBlob required,
+	thumbnailBackgoundAssetName TextBlob,
+	thumbnailEffectAssetName TextBlob
+}
+
+entity MChallengeQuestAchievementReward {
+	worldId Integer required,
+	stageId Integer required,
+	rewardGroupId Integer required
+}
+
+entity MChallengeQuestAchievementRewardGroup {
+	id Integer required,
+	groupId Integer required,
+	contentType Integer required,
+	contentId Integer,
+	contentAmount Integer required
+}
+
+entity MChallengeQuestStage {
+	id MChallengeQuestWorld required,
+	worldId Integer required,
+	number Integer required,
+	name TextBlob required,
+	imagePath TextBlob required,
+	characterThumbnailPath TextBlob required,
+	difficulty Integer required,
+	stageUnlockPattern Integer required,
+	storyOnly Integer required,
+	firstHalfNpcDeckId Integer required,
+	firstHalfEnvironmentId Integer required,
+	secondHalfNpcDeckId Integer required,
+	secondHalfEnvironmentId Integer required,
+	extraFirstHalfNpcDeckId Integer required,
+	consumeAp Integer required,
+	kickOffType Integer required,
+	matchMinute Integer required,
+	enableExtra Integer required,
+	enablePk Integer required,
+	aiLevel Integer required,
+	startAtSecondHalf Integer required,
+	startScore Integer required,
+	startScoreOpponent Integer required,
+	conditionId Integer,
+	optionId Integer,
+	deckConditionId Integer,
+	shortName TextBlob required,
+	skipCheckPoint Integer required,
+	roadNumber Integer required
+}
+
+entity MChallengeQuestStageReward {
+	stageId Integer required,
+	exp Integer required,
+	coin Integer required,
+	guildPoint Integer required,
+	clearRewardGroupId Integer required,
+	clearRewardWeightId Integer required,
+	achievementRewardGroupId Integer required,
+	coopGroupId Integer required,
+	specialRewardGroupId Integer,
+	specialRewardAmount Integer required,
+	goalRewardGroupId Integer
+}
+
+entity MChallengeQuestWorld {
+	id Integer required,
+	setId Integer required,
+	number Integer required,
+	name TextBlob required,
+	imagePath TextBlob required,
+	backgroundImagePath TextBlob required,
+	description TextBlob required,
+	stageUnlockPattern Integer required,
+	arousalBanner TextBlob,
+	specialRewardContentType Integer,
+	specialRewardContentId Integer,
+	isEnableCoop Integer required
+}
+
+entity MCharacter {
+	id Integer required,
+	name TextBlob required,
+	announceName TextBlob required,
+	shortName TextBlob required,
+	characterBookPriority Integer required
+}
+
+entity MCharacterBook {
+	id Integer required,
+	cvName TextBlob,
+	series Integer required,
+	height Integer,
+	weight Integer,
+	introduction TextBlob required,
+	firstAppearedComic TextBlob required,
+	firstAppearedComicLink TextBlob required,
+	skill1 TextBlob,
+	skill1Comic TextBlob,
+	skill1ComicLink TextBlob,
+	skill2 TextBlob,
+	skill2Comic TextBlob,
+	skill2ComicLink TextBlob,
+	skill3 TextBlob,
+	skill3Comic TextBlob,
+	skill3ComicLink TextBlob
+}
+
+entity MCharacterScoreCut {
+	characterId Integer required,
+	teamId Integer required,
+	scoreCutType Integer required
+}
+
+entity MChatSystemMessage {
+	messageType Integer required,
+	messageKey TextBlob required
+}
+
+entity MCheatCaution {
+	caution Integer required,
+	description TextBlob required,
+	imageAssetName TextBlob required
+}
+
+entity MColorPalette {
+	color TextBlob required,
+	orderNum Integer required
+}
+
+entity MCombinationCutPosition {
+	id MCharacter required,
+	actionCutId Integer required,
+	characterId Integer required,
+	activatorPosition Integer required,
+	participantPosition1 Integer required,
+	participantPosition2 Integer required,
+	participantPosition3 Integer required,
+	participantPosition4 Integer required,
+	participantPosition5 Integer required
+}
+
+entity MCommonBanner {
+	id Integer required,
+	assetName TextBlob required,
+	startAt Integer required,
+	endAt Integer required,
+	labelEndAt Integer required,
+	sceneTransition Integer required,
+	sceneTransitionParam TextBlob,
+	orderNum Integer required,
+	appealType Integer,
+	appealContentId Integer
+}
+
+entity MConstant {
+	key TextBlob required,
+	value Integer required
+}
+
+entity MContentableCard {
+	id Integer required,
+	playableCardId Integer required,
+	level Integer required,
+	actionMainLevel Integer required,
+	actionSub1Level Integer required,
+	actionSub2Level Integer required,
+	actionSub3Level Integer required,
+	actionSub4Level Integer required,
+	plusRate Integer required
+}
+
+entity MCoopRoomStamp {
+	role Integer required,
+	orderNum Integer required,
+	masterId Integer required
+}
+
+entity MCut {
+	name TextBlob required,
+	fpA Integer required,
+	fpB Integer required,
+	fpC Integer required,
+	fpD Integer required,
+	fpE Integer required,
+	fpF Integer required,
+	gkA Integer required,
+	gkB Integer required,
+	showEnvironmentalEffect Integer required,
+	cutType Integer required,
+	groupId Integer required,
+	isCombiCut Integer required
+}
+
+entity MCutAction {
+	actionCutId Integer required,
+	cutActionType Integer required,
+	cutSequenceText TextBlob required
+}
+
+entity MCutSeqGroup {
+	key TextBlob required,
+	param TextBlob required,
+	cutSequenceText TextBlob required
+}
+
+entity MCutShootOrbit {
+	id Integer required,
+	shootOrbit Integer required,
+	shootResult Integer required,
+	offenseSequenceText TextBlob required,
+	defenseSequenceText TextBlob required
+}
+
+entity MDbMapping {
+	fileName TextBlob required,
+	dbName TextBlob required,
+	path TextBlob required
+}
+
+entity MDeckCondition {
+	id Integer required,
+	targetFormationGroupId Integer,
+	targetCharacterGroupMinId Integer,
+	targetCharacterGroupMaxId Integer,
+	targetPlayableCardGroupMinId Integer,
+	targetPlayableCardGroupMaxId Integer,
+	targetRarityGroupId Integer,
+	targetAttribute Integer,
+	targetNationalityGroupMinId Integer,
+	targetNationalityGroupMaxId Integer,
+	targetTeamGroupMinId Integer,
+	targetTeamGroupMaxId Integer,
+	targetActionGroupMinId Integer,
+	targetActionGroupMaxId Integer,
+	targetTriggerEffectGroupMinId Integer,
+	targetTriggerEffectGroupMaxId Integer,
+	targetCharacterMinCount Integer required,
+	targetCharacterMaxCount Integer required,
+	targetPlayableCardMinCount Integer required,
+	targetPlayableCardMaxCount Integer required,
+	targetRarityMaxCount Integer required,
+	targetAttributeMinCount Integer required,
+	targetNationalityMinCount Integer required,
+	targetNationalityMaxCount Integer required,
+	targetTeamMinCount Integer required,
+	targetTeamMaxCount Integer required,
+	targetActionMinCount Integer required,
+	targetActionMaxCount Integer required,
+	targetTriggerEffectMinCount Integer required,
+	targetTriggerEffectMaxCount Integer required,
+	targetCharacterIsStartingMin Integer required,
+	targetCharacterIsStartingMax Integer required,
+	targetPlayableCardIsStartingMin Integer required,
+	targetPlayableCardIsStartingMax Integer required,
+	targetRarityIsStarting Integer required,
+	targetAttributeIsStarting Integer required,
+	targetNationalityIsStartingMin Integer required,
+	targetNationalityIsStartingMax Integer required,
+	targetTeamIsStartingMin Integer required,
+	targetTeamIsStartingMax Integer required,
+	targetActionIsStartingMin Integer required,
+	targetActionIsStartingMax Integer required,
+	targetTriggerEffectIsStartingMin Integer required,
+	targetTriggerEffectIsStartingMax Integer required
+}
+
+entity MDeckRarityConditionDescription {
+	id Integer required,
+	rarityGroupId Integer required,
+	countType Integer required,
+	isStarting Integer required,
+	description TextBlob required,
+	iconName TextBlob required,
+	smallIconName TextBlob required
+}
+
+entity MDefine {
+	key TextBlob required,
+	value Integer required
+}
+
+entity MDetachActionSkillCost {
+	rarity Integer required,
+	cost Integer required
+}
+
+entity MDictionaryAr {
+	key TextBlob required,
+	message TextBlob required
+}
+
+entity MDictionaryDe {
+	key TextBlob required,
+	message TextBlob required
+}
+
+entity MDictionaryEn {
+	key TextBlob required,
+	message TextBlob required
+}
+
+entity MDictionaryEs {
+	key TextBlob required,
+	message TextBlob required
+}
+
+entity MDictionaryFr {
+	key TextBlob required,
+	message TextBlob required
+}
+
+entity MDictionaryIt {
+	key TextBlob required,
+	message TextBlob required
+}
+
+entity MDictionaryJa {
+	key TextBlob required,
+	message TextBlob required
+}
+
+entity MDictionaryPt {
+	key TextBlob required,
+	message TextBlob required
+}
+
+entity MDictionaryZh {
+	key TextBlob required,
+	message TextBlob required
+}
+
+entity MDistributeCardParameter {
+	rarity Integer required,
+	isGk Integer required,
+	maxStepCount Integer required,
+	maxTotalStepCount Integer required,
+	distributePointByStep Integer required
+}
+
+entity MDistributeCardParameterStep {
+	isGk Integer required,
+	step Integer required,
+	param Integer required
+}
+
+entity MDistributeParamPoint {
+	id Integer required,
+	targetAttribute Integer required,
+	targetNationalityGroupId Integer required,
+	name TextBlob required,
+	description TextBlob required,
+	thumbnailAssetName TextBlob required,
+	iconAssetName TextBlob required
+}
+
+entity MDummyEmblem {
+	id MEmblemParts required,
+	backgroundId Integer required,
+	backgroundColor TextBlob required,
+	upperId Integer,
+	upperColor TextBlob,
+	middleId Integer required,
+	middleColor TextBlob required,
+	lowerId Integer,
+	lowerColor TextBlob
+}
+
+entity MDummyOpponent {
+	id MNpcDeck required,
+	npcDeckId Integer required,
+	totalParameter Integer required,
+	name TextBlob required,
+	rank Integer required,
+	emblemId Integer required,
+	fpUniformUpId Integer required,
+	fpUniformUpColor TextBlob,
+	fpUniformBottomId Integer required,
+	fpUniformBottomColor TextBlob,
+	gkUniformUpId Integer required,
+	gkUniformUpColor TextBlob,
+	gkUniformBottomId Integer required,
+	gkUniformBottomColor TextBlob
+}
+
+entity MEmblemParts {
+	id Integer required,
+	assetName TextBlob required,
+	partsType Integer required
+}
+
+entity MEmblemSet {
+	id Integer required,
+	assetName TextBlob required,
+	name TextBlob required,
+	description TextBlob required
+}
+
+entity MEncountersBonus {
+	encountersType Integer required,
+	isSkillSuccess Integer required,
+	threshold Integer required,
+	probabilityBonusValue Integer required
+}
+
+entity MEncountersCommandBranch {
+	ballFloatCondition Integer required,
+	condition Integer required,
+	encountersType Integer required,
+	isSuccess Integer required,
+	commandType Integer required,
+	successRate Integer required,
+	looseBallRate Integer required,
+	touchLightlyRate Integer required,
+	postRate Integer required
+}
+
+entity MEncountersCommandCompatibility {
+	encountersType Integer required,
+	offenseCommandType Integer required,
+	defenseCommandType Integer required,
+	offenseMagnification Integer required,
+	defenseMagnification Integer required
+}
+
+entity MEncountersCut {
+	condition Integer required,
+	ballFloatCondition Integer required,
+	command1Type Integer required,
+	command1IsSkill Integer required,
+	command2Type Integer required,
+	command2IsSkill Integer required,
+	result Integer required,
+	shootResult Integer required,
+	isThrown Integer required,
+	offenseSequenceText TextBlob required,
+	defenseSequenceText TextBlob required
+}
+
+entity MEventTitleEffect {
+	id Integer required,
+	effectPath TextBlob required,
+	bgmSoundEvent TextBlob required,
+	seSoundEvent TextBlob required,
+	voiceSoundEventSuffixes TextBlob required,
+	copyrightText TextBlob required,
+	startAt Integer required,
+	endAt Integer required
+}
+
+entity MExtensionSale {
+	id Integer required,
+	menuMessage TextBlob,
+	startAt Integer required,
+	endAt Integer required,
+	type Integer required,
+	addExtension Integer required
+}
+
+entity MExtraNews {
+	id Integer required,
+	orderNum Integer required,
+	assetName TextBlob required,
+	webviewId TextBlob required,
+	startAt Integer required,
+	endAt Integer required
+}
+
+entity MFormation {
+	id MPassiveEffectRange required,
+	effectValue Integer required,
+	effectProbability Integer required,
+	formationArrangementFw TextBlob required,
+	formationArrangementOmf TextBlob required,
+	formationArrangementDmf TextBlob required,
+	formationArrangementDf TextBlob required,
+	effectId Integer,
+	description TextBlob required,
+	shortDescription TextBlob required,
+	name TextBlob required,
+	thumbnailAssetName TextBlob required,
+	startingUniformNos TextBlob required,
+	subUniformNos TextBlob required,
+	exType Integer,
+	matchFormationId Integer required
+}
+
+entity MFullPowerPoint {
+	pointType Integer required,
+	value Integer required
+}
+
+entity MGachaRendition {
+	id Integer required,
+	mainPrefabName TextBlob required,
+	resultExpectedUpPrefabName TextBlob required,
+	resultQuestionPrefabName TextBlob,
+	soundSwitchEventName TextBlob required
+}
+
+entity MGachaRenditionAfterInputCutIn {
+	renditionId Integer required,
+	isSsr Integer required,
+	weight Integer required,
+	cutInBgPrefabName TextBlob required,
+	seStartCutIn TextBlob required
+}
+
+entity MGachaRenditionAfterInputCutInTextColor {
+	isSsr Integer required,
+	weight Integer required,
+	color TextBlob required
+}
+
+entity MGachaRenditionBall {
+	renditionId Integer required,
+	isSsr Integer required,
+	weight Integer required,
+	ballTextureName TextBlob required,
+	trajectoryNormalTextureName TextBlob required,
+	trajectoryGoldTextureName TextBlob required,
+	trajectoryRainbowTextureName TextBlob required
+}
+
+entity MGachaRenditionBeforeShootCutInCharacterNum {
+	isManySsr Integer required,
+	isSsr Integer required,
+	pattern Integer required,
+	weight Integer required,
+	num Integer required
+}
+
+entity MGachaRenditionBeforeShootCutInPattern {
+	renditionId Integer required,
+	isManySsr Integer required,
+	isSsr Integer required,
+	weight Integer required,
+	pattern Integer required,
+	normalPrefabName TextBlob required,
+	flashBackPrefabName1 TextBlob required,
+	flashBackPrefabName2 TextBlob required,
+	flashBackPrefabName3 TextBlob required,
+	flashBackPrefabName4 TextBlob required,
+	voicePrefix TextBlob required,
+	seNormal TextBlob required,
+	seFlashBack TextBlob required,
+	exceptKickerId Integer required
+}
+
+entity MGachaRenditionExtraCutin {
+	renditionId Integer required,
+	mainPrefabName TextBlob required,
+	voiceStartCutIn TextBlob required,
+	serif TextBlob required
+}
+
+entity MGachaRenditionFirstGimmick {
+	isSsr Integer required,
+	weight Integer required,
+	birdNum Integer required,
+	isTickerTape Integer required
+}
+
+entity MGachaRenditionKicker {
+	renditionId Integer required,
+	isManySsr Integer required,
+	isSsr Integer required,
+	weight Integer required,
+	leftModelId Integer required,
+	leftUniformUpId Integer required,
+	leftUniformBottomId Integer required,
+	leftUniformNumber Integer required,
+	rightModelId Integer required,
+	rightUniformUpId Integer required,
+	rightUniformBottomId Integer required,
+	rightUniformNumber Integer required,
+	cutInSpriteName TextBlob required,
+	leftMessage TextBlob required,
+	rightMessage TextBlob required,
+	voiceTrigger TextBlob required,
+	voiceStartCutIn TextBlob required,
+	kickerId Integer required
+}
+
+entity MGachaRenditionSwipeIcon {
+	isSsr Integer required,
+	isROrLess Integer required,
+	weight Integer required,
+	swipeIconPrefabName TextBlob required
+}
+
+entity MGachaRenditionTradeSign {
+	renditionId Integer required,
+	isSsr Integer required,
+	weight Integer required,
+	signTextureName TextBlob required
+}
+
+entity MGachaRenditionTrajectory {
+	weight Integer required,
+	trajectoryType Integer required
+}
+
+entity MGachaRenditionTrajectoryCutIn {
+	renditionId Integer required,
+	trajectoryType Integer required,
+	spriteName TextBlob required,
+	weight Integer required,
+	voice TextBlob required,
+	exceptKickerId Integer required
+}
+
+entity MGachaRenditionTrajectoryPhoenix {
+	isPhoenix Integer required,
+	weight Integer required
+}
+
+entity MGachaTicket {
+	id Integer required,
+	name TextBlob required,
+	shortName TextBlob required,
+	description TextBlob required,
+	maxAmount Integer required,
+	thumbnailAssetName TextBlob required,
+	endAt Integer required
+}
+
+entity MGoalEffectiveCard {
+	eventType Integer required,
+	eventId Integer required,
+	playableCardId Integer required,
+	rate Integer required
+}
+
+entity MGoalJudgement {
+	judgementId Integer required,
+	encountersType Integer required,
+	successRate Integer required,
+	goalPostRate Integer required,
+	ballPushRate Integer required,
+	clearRate Integer required
+}
+
+entity MGuerillaQuestStage {
+	id MGuerillaQuestWorld required,
+	worldId Integer required,
+	number Integer required,
+	name TextBlob required,
+	imagePath TextBlob required,
+	characterThumbnailPath TextBlob required,
+	difficulty Integer required,
+	stageUnlockPattern Integer required,
+	storyOnly Integer required,
+	firstHalfNpcDeckId Integer required,
+	firstHalfEnvironmentId Integer required,
+	secondHalfNpcDeckId Integer required,
+	secondHalfEnvironmentId Integer required,
+	extraFirstHalfNpcDeckId Integer required,
+	extraSecondHalfNpcDeckId Integer required,
+	consumeAp Integer required,
+	kickOffType Integer required,
+	matchMinute Integer required,
+	enableExtra Integer required,
+	enablePk Integer required,
+	aiLevel Integer required,
+	startAtSecondHalf Integer required,
+	startScore Integer required,
+	startScoreOpponent Integer required,
+	conditionId Integer,
+	optionId Integer,
+	deckConditionId Integer
+}
+
+entity MGuerillaQuestStageReward {
+	stageId Integer required,
+	exp Integer required,
+	coin Integer required,
+	guildPoint Integer required,
+	clearRewardGroupId Integer required,
+	clearRewardWeightId Integer required,
+	achievementRewardGroupId Integer required,
+	coopGroupId Integer required,
+	specialRewardGroupId Integer,
+	specialRewardAmount Integer required,
+	goalRewardGroupId Integer
+}
+
+entity MGuerillaQuestTsubasaPointReward {
+	stageId Integer required,
+	tsubasaPoint Integer required,
+	contentType Integer required,
+	contentId Integer,
+	contentAmount Integer required
+}
+
+entity MGuerillaQuestWorld {
+	id Integer required,
+	setId Integer required,
+	number Integer required,
+	name TextBlob required,
+	imagePath TextBlob required,
+	description TextBlob required,
+	stageUnlockPattern Integer required,
+	arousalBanner TextBlob,
+	specialRewardContentType Integer,
+	specialRewardContentId Integer,
+	isEnableCoop Integer required
+}
+
+entity MGuildChatDefaultStamp {
+	masterId Integer required
+}
+
+entity MGuildEffect {
+	effectType Integer required,
+	name TextBlob required,
+	effectId Integer,
+	thumbnailPath TextBlob required
+}
+
+entity MGuildEffectLevel {
+	effectType Integer required,
+	level Integer required,
+	rate Integer required,
+	rateStr TextBlob required,
+	coin Integer required,
+	guildLevel Integer required,
+	guildMedal Integer required
+}
+
+entity MGuildLevel {
+	level Integer required,
+	exp Integer required,
+	memberCount Integer required,
+	recommendMemberCount Integer required,
+	guildMedal Integer required
+}
+
+entity MGuildMission {
+	id MMissionReward required,
+	term Integer required,
+	title TextBlob required,
+	description TextBlob required,
+	missionType Integer required,
+	param1 Integer,
+	rewardId Integer required,
+	link Integer,
+	sceneTransitionParam TextBlob,
+	pickup Integer required,
+	triggerMissionId Integer,
+	orderNum Integer required
+}
+
+entity MGuildNegativeWord {
+	id Integer required,
+	word TextBlob required
+}
+
+entity MGuildRoulettePrize {
+	id Integer required,
+	rank Integer required,
+	contentType Integer required,
+	contentId Integer,
+	contentAmount Integer required
+}
+
+entity MGuildTopBanner {
+	id Integer required,
+	assetPath TextBlob required,
+	guildBannerType Integer required,
+	startAt Integer required,
+	endAt Integer required
+}
+
+entity MHomeBanner {
+	id Integer required,
+	bannerType Integer required,
+	assetName TextBlob required,
+	startAt Integer required,
+	endAt Integer required,
+	labelEndAt Integer required,
+	sceneTransition Integer required,
+	sceneTransitionParam TextBlob,
+	orderNum Integer required,
+	appealType Integer,
+	appealContentId Integer
+}
+
+entity MHomeMarquee {
+	id Integer required,
+	priority Integer required,
+	marqueeText TextBlob required,
+	startAt Integer required,
+	endAt Integer required
+}
+
+entity MInheritActionSkillCost {
+	rarity Integer required,
+	level Integer required,
+	cost Integer required
+}
+
+entity MInitUserDeck {
+	deckId Integer required,
+	name TextBlob required,
+	formationId Integer required,
+	captainCardId Integer,
+	gkCardId Integer,
+	fp1CardId Integer,
+	fp2CardId Integer,
+	fp3CardId Integer,
+	fp4CardId Integer,
+	fp5CardId Integer,
+	fp6CardId Integer,
+	fp7CardId Integer,
+	fp8CardId Integer,
+	fp9CardId Integer,
+	fp10CardId Integer,
+	sub1CardId Integer,
+	sub2CardId Integer,
+	sub3CardId Integer,
+	sub4CardId Integer,
+	sub5CardId Integer,
+	teamEffect1CardId Integer,
+	teamEffect2CardId Integer,
+	teamEffect3CardId Integer
+}
+
+entity MKeeperCutAction {
+	actionCutId Integer required,
+	keeperCutActionType Integer required,
+	cutSequenceText TextBlob required
+}
+
+entity MLeague {
+	hierarchy Integer required,
+	weight Integer required,
+	name TextBlob required,
+	rooms Integer required,
+	promotionRate Integer required,
+	demotionRate Integer required,
+	totalParameterRangeUpper Integer required,
+	totalParameterRangeLower Integer required,
+	requiredMatches Integer,
+	startWeekId Integer required
+}
+
+entity MLeagueAffiliateReward {
+	id Integer required,
+	hierarchy Integer required,
+	contentType Integer required,
+	contentId Integer,
+	contentAmount Integer required
+}
+
+entity MLeagueEffect {
+	effectType Integer required,
+	leagueHierarchy Integer required,
+	rate Integer required,
+	price Integer required
+}
+
+entity MLeagueRankingReward {
+	id Integer required,
+	leagueHierarchy Integer required,
+	rankTo Integer required,
+	rewardGroupId Integer required,
+	startAt Integer,
+	endAt Integer
+}
+
+entity MLeagueRankingRewardGroup {
+	id Integer required,
+	groupId Integer required,
+	contentType Integer required,
+	contentId Integer,
+	contentAmount Integer required
+}
+
+entity MLeagueRegulation {
+	id MMatchOption required,
+	startAt Integer required,
+	endAt Integer required,
+	matchOptionId Integer required,
+	deckConditionId Integer required,
+	ruleTutorialId Integer required
+}
+
+entity MLoginBonusIncentive {
+	roundId Integer required,
+	day Integer required,
+	contentType Integer required,
+	contentId Integer,
+	contentAmount Integer required,
+	presentDetail TextBlob required,
+	isDecorated Integer required
+}
+
+entity MLoginBonusRound {
+	roundId Integer required,
+	bonusType Integer required,
+	startAt Integer required,
+	endAt Integer required,
+	serifSanae TextBlob required,
+	serifYayoi TextBlob required,
+	serifYoshiko TextBlob required,
+	serifMaki TextBlob required,
+	sanaeImage TextBlob,
+	yayoiImage TextBlob,
+	yoshikoImage TextBlob,
+	makiImage TextBlob,
+	soundSwitchEventName TextBlob required,
+	nextId Integer,
+	lastDayAppealComment TextBlob,
+	backgroundImage TextBlob
+}
+
+entity MLoginBonusSerif {
+	serifId Integer required,
+	serif1 TextBlob,
+	serif2 TextBlob
+}
+
+entity MLuck {
+	id Integer required,
+	targetAttribute Integer,
+	targetCharacterGroupId Integer,
+	targetTeamGroupId Integer,
+	targetNationalityGroupId Integer,
+	luckRateGroupId Integer required,
+	description TextBlob required
+}
+
+entity MLuckRateGroup {
+	id Integer required,
+	groupId Integer required,
+	rarity Integer required,
+	rate Integer required
+}
+
+entity MLuckWeeklyQuestStage {
+	id MLuckWeeklyQuestWorld required,
+	worldId Integer required,
+	number Integer required,
+	name TextBlob required,
+	imagePath TextBlob required,
+	characterThumbnailPath TextBlob required,
+	difficulty Integer required,
+	stageUnlockPattern Integer required,
+	storyOnly Integer required,
+	firstHalfNpcDeckId Integer required,
+	firstHalfEnvironmentId Integer required,
+	secondHalfNpcDeckId Integer required,
+	secondHalfEnvironmentId Integer required,
+	extraFirstHalfNpcDeckId Integer required,
+	extraSecondHalfNpcDeckId Integer required,
+	consumeAp Integer required,
+	kickOffType Integer required,
+	matchMinute Integer required,
+	enableExtra Integer required,
+	enablePk Integer required,
+	aiLevel Integer required,
+	startAtSecondHalf Integer required,
+	startScore Integer required,
+	startScoreOpponent Integer required,
+	conditionId Integer,
+	optionId Integer,
+	deckConditionId Integer,
+	luckId Integer
+}
+
+entity MLuckWeeklyQuestStageReward {
+	stageId Integer required,
+	exp Integer required,
+	coin Integer required,
+	guildPoint Integer required,
+	clearRewardGroupId Integer required,
+	clearRewardWeightId Integer required,
+	achievementRewardGroupId Integer required,
+	coopGroupId Integer required,
+	specialRewardGroupId Integer,
+	specialRewardAmount Integer required,
+	goalRewardGroupId Integer
+}
+
+entity MLuckWeeklyQuestWorld {
+	id Integer required,
+	setId Integer required,
+	number Integer required,
+	name TextBlob required,
+	imagePath TextBlob required,
+	description TextBlob required,
+	stageUnlockPattern Integer required,
+	arousalBanner TextBlob,
+	specialRewardContentType Integer,
+	specialRewardContentId Integer,
+	isEnableCoop Integer required,
+	clearLimit Integer required
+}
+
+entity MMarathonAchievementReward {
+	eventId Integer required,
+	eventPoint Integer required,
+	rewardGroupId Integer required
+}
+
+entity MMarathonAchievementRewardGroup {
+	id Integer required,
+	groupId Integer required,
+	contentType Integer required,
+	contentId Integer,
+	contentAmount Integer required
+}
+
+entity MMarathonBoostItem {
+	id Integer required,
+	eventId Integer,
+	boostRatio Integer required,
+	name TextBlob required,
+	shortName TextBlob required,
+	thumbnailAssetName TextBlob required,
+	description TextBlob required
+}
+
+entity MMarathonBoostSchedule {
+	eventId Integer required,
+	boostRatio Integer required,
+	startAt Integer required,
+	endAt Integer required
+}
+
+entity MMarathonEffectiveCard {
+	eventId Integer required,
+	playableCardId Integer required,
+	rate Integer required
+}
+
+entity MMarathonLoopReward {
+	eventId Integer required,
+	loopPoint Integer required
+}
+
+entity MMarathonLoopRewardGroup {
+	id Integer required,
+	eventId Integer required,
+	contentType Integer required,
+	contentId Integer,
+	contentAmount Integer required,
+	weight Integer required
+}
+
+entity MMarathonQuestStage {
+	id MMarathonQuestWorld required,
+	worldId Integer required,
+	number Integer required,
+	name TextBlob required,
+	imagePath TextBlob required,
+	characterThumbnailPath TextBlob required,
+	difficulty Integer required,
+	stageUnlockPattern Integer required,
+	storyOnly Integer required,
+	firstHalfNpcDeckId Integer required,
+	firstHalfEnvironmentId Integer required,
+	secondHalfNpcDeckId Integer required,
+	secondHalfEnvironmentId Integer required,
+	extraFirstHalfNpcDeckId Integer required,
+	extraSecondHalfNpcDeckId Integer required,
+	consumeAp Integer required,
+	kickOffType Integer required,
+	matchMinute Integer required,
+	enableExtra Integer required,
+	enablePk Integer required,
+	aiLevel Integer required,
+	startAtSecondHalf Integer required,
+	startScore Integer required,
+	startScoreOpponent Integer required,
+	conditionId Integer,
+	optionId Integer,
+	deckConditionId Integer
+}
+
+entity MMarathonQuestStageReward {
+	stageId Integer required,
+	exp Integer required,
+	coin Integer required,
+	guildPoint Integer required,
+	clearRewardGroupId Integer required,
+	clearRewardWeightId Integer required,
+	achievementRewardGroupId Integer required,
+	coopGroupId Integer required,
+	specialRewardGroupId Integer,
+	specialRewardAmount Integer required,
+	goalRewardGroupId Integer
+}
+
+entity MMarathonQuestTsubasaPointReward {
+	stageId Integer required,
+	tsubasaPoint Integer required,
+	contentType Integer required,
+	contentId Integer,
+	contentAmount Integer required
+}
+
+entity MMarathonQuestWorld {
+	id Integer required,
+	setId Integer required,
+	number Integer required,
+	name TextBlob required,
+	imagePath TextBlob required,
+	description TextBlob required,
+	stageUnlockPattern Integer required,
+	arousalBanner TextBlob,
+	specialRewardContentType Integer,
+	specialRewardContentId Integer,
+	isEnableCoop Integer required
+}
+
+entity MMarathonRankingReward {
+	eventId Integer required,
+	rankingFrom Integer required,
+	rankingTo Integer required,
+	rewardGroupId Integer required
+}
+
+entity MMarathonRankingRewardGroup {
+	id Integer required,
+	groupId Integer required,
+	contentType Integer required,
+	contentId Integer,
+	contentAmount Integer required
+}
+
+entity MMasterVersion {
+	name TextBlob required,
+	version Integer required,
+	path TextBlob,
+	size Integer
+}
+
+entity MMatchEnvironment {
+	id Integer required,
+	category Integer required,
+	skyTex TextBlob required,
+	ball TextBlob required,
+	stadium TextBlob required,
+	rainyAssetName TextBlob,
+	isPlayRainySound Integer required,
+	offenseStartBgm TextBlob required,
+	offenseStopBgm TextBlob required,
+	defenseStartBgm TextBlob required,
+	defenseStopBgm TextBlob required
+}
+
+entity MMatchFormation {
+	id Integer required,
+	position1 Integer required,
+	position2 Integer required,
+	position3 Integer required,
+	position4 Integer required,
+	position5 Integer required,
+	position6 Integer required,
+	position7 Integer required,
+	position8 Integer required,
+	position9 Integer required,
+	position10 Integer required,
+	position11 Integer required
+}
+
+entity MMatchOption {
+	id MPassiveEffectRange required,
+	passiveEffectId Integer,
+	passiveEffectValue Integer required,
+	activateFullPowerType Integer required,
+	attributeMagnification Integer required,
+	useStaminaMagnification Integer required,
+	isIgnoreTeamSkill Integer required,
+	staminaInfinityType Integer required
+}
+
+entity MMatchResultCutin {
+	id MCharacter required,
+	characterId Integer required,
+	teamId Integer required,
+	isWin Integer required,
+	text TextBlob required,
+	soundEvent TextBlob required
+}
+
+entity MMedal {
+	id Integer required,
+	medalType Integer required,
+	name TextBlob required,
+	description TextBlob required,
+	maxAmount Integer required,
+	iconAssetName TextBlob required,
+	thumbnailAssetName TextBlob required
+}
+
+entity MMission {
+	id MMissionReward required,
+	term Integer required,
+	roundNum Integer,
+	title TextBlob,
+	description TextBlob,
+	missionType Integer required,
+	absolute Integer required,
+	param1 Integer,
+	param2 Integer,
+	param3 Integer,
+	param4 Integer,
+	param5 Integer,
+	trigger Integer required,
+	triggerCondition Integer required,
+	rewardId Integer required,
+	startAt Integer required,
+	endAt Integer,
+	link Integer,
+	sceneTransitionParam TextBlob,
+	pickup Integer required,
+	orderNum Integer required
+}
+
+entity MMissionReward {
+	id Integer required,
+	contentType Integer required,
+	contentId Integer,
+	contentAmount Integer required
+}
+
+entity MModelCard {
+	id Integer required,
+	hairModel Integer required,
+	hairTexture Integer required,
+	headModel Integer required,
+	headTexture Integer required,
+	skinTexture Integer required,
+	shoesModel Integer required,
+	shoesTexture Integer required,
+	globeTexture Integer,
+	uniqueModel Integer,
+	uniqueTexture Integer,
+	dressingTypeUp Integer required,
+	dressingTypeBottom Integer required,
+	height Integer required,
+	width Integer required
+}
+
+entity MModelQuestStage {
+	stageId Integer required,
+	image TextBlob required,
+	modelName TextBlob required,
+	bgmOffencing TextBlob required,
+	bgmDefencing TextBlob required,
+	bgmHurrying TextBlob required
+}
+
+entity MModelUniformBottom {
+	uniformBottomId Integer required,
+	defaultDressingType Integer required,
+	uniformModel Integer required,
+	uniformTexture Integer required,
+	uniformNoTexture Integer required,
+	defaultColor TextBlob,
+	uniformNoColor TextBlob required,
+	numberRightLeg Integer required,
+	numberLeftLeg Integer required,
+	uniformNoPositionX Integer,
+	uniformNoPositionY Integer
+}
+
+entity MModelUniformBottomResource {
+	uniformTypeId Integer required,
+	dressingType Integer required,
+	width Integer required
+}
+
+entity MModelUniformUp {
+	uniformUpId Integer required,
+	defaultDressingType Integer required,
+	uniformModel Integer required,
+	uniformTexture Integer required,
+	uniformNoTexture Integer required,
+	defaultColor TextBlob,
+	uniformNoColor TextBlob required,
+	numberChest Integer required,
+	numberBelly Integer required,
+	numberBack Integer required,
+	uniformNoPositionX Integer,
+	uniformNoPositionY Integer
+}
+
+entity MModelUniformUpResource {
+	uniformTypeId Integer required,
+	dressingType Integer required,
+	width Integer required
+}
+
+entity MMovieAsset {
+	lang Integer required,
+	name TextBlob required,
+	size Integer required,
+	version Integer required,
+	type Integer required
+}
+
+entity MNationality {
+	id Integer required,
+	name TextBlob required,
+	icon TextBlob required
+}
+
+entity MNgWord {
+	id Integer required,
+	word TextBlob required,
+	judgeType Integer required
+}
+
+entity MNpcCard {
+	id MCharacter required,
+	characterId Integer required,
+	shortName TextBlob required,
+	nickName TextBlob required,
+	teamId Integer required,
+	nationalityId Integer required,
+	rarity Integer required,
+	attribute Integer required,
+	modelId Integer required,
+	level Integer required,
+	thumbnailAssetsId Integer required,
+	cardIllustAssetsId Integer required,
+	playableAssetsId Integer required,
+	teamEffectId Integer,
+	teamEffectLevel Integer required,
+	triggerEffectId Integer,
+	action1Id Integer,
+	action1Level Integer,
+	action2Id Integer,
+	action2Level Integer,
+	action3Id Integer,
+	action3Level Integer,
+	action4Id Integer,
+	action4Level Integer,
+	action5Id Integer,
+	action5Level Integer,
+	stamina Integer required,
+	dribble Integer required,
+	shoot Integer required,
+	ballPass Integer required,
+	tackle Integer required,
+	block Integer required,
+	intercept Integer required,
+	speed Integer required,
+	power Integer required,
+	technique Integer required,
+	punching Integer required,
+	catching Integer required,
+	highBallBonus Integer required,
+	lowBallBonus Integer required,
+	personalityId Integer required,
+	uniformNo Integer required,
+	levelGroupId Integer required
+}
+
+entity MNpcDeck {
+	id MFormation required,
+	teamName TextBlob required,
+	uniformBottomFp Integer required,
+	uniformUpFp Integer required,
+	uniformBottomGk Integer required,
+	uniformUpGk Integer required,
+	formationId Integer required,
+	captainCardId Integer required,
+	teamEffect1CardId Integer required,
+	teamEffect2CardId Integer required,
+	teamEffect3CardId Integer required,
+	npcCardId1 Integer required,
+	npcCardId2 Integer required,
+	npcCardId3 Integer required,
+	npcCardId4 Integer required,
+	npcCardId5 Integer required,
+	npcCardId6 Integer required,
+	npcCardId7 Integer required,
+	npcCardId8 Integer required,
+	npcCardId9 Integer required,
+	npcCardId10 Integer required,
+	npcCardId11 Integer required,
+	tick Integer required
+}
+
+entity MNpcPersonality {
+	id Integer required,
+	passingTargetRate Integer required,
+	actionSkillRate Integer required,
+	dribbleMagnification Integer required,
+	passingMagnification Integer required,
+	onetwoMagnification Integer required,
+	shootMagnification Integer required,
+	volleyShootMagnification Integer required,
+	headingShootMagnification Integer required,
+	tackleMagnification Integer required,
+	blockMagnification Integer required,
+	passCutMagnification Integer required,
+	clearMagnification Integer required,
+	competeMagnification Integer required,
+	trapMagnification Integer required
+}
+
+entity MPassiveEffectRange {
+	id Integer required,
+	name TextBlob required,
+	effectParamType Integer required,
+	targetPositionGk Integer required,
+	targetPositionFw Integer required,
+	targetPositionOmf Integer required,
+	targetPositionDmf Integer required,
+	targetPositionDf Integer required,
+	targetAttribute Integer required,
+	targetNationalityGroupId Integer,
+	targetTeamGroupId Integer,
+	targetPlayableCardGroupId Integer,
+	description TextBlob required
+}
+
+entity MPenaltyKickCut {
+	kickerCourse Integer required,
+	keeperCourse Integer required,
+	keeperCommand Integer required,
+	resultType Integer required,
+	offenseSequenceText TextBlob required,
+	defenseSequenceText TextBlob required
+}
+
+entity MPlayableCard {
+	id MModelCard required,
+	modelId Integer required,
+	properPositionGk Integer required,
+	properPositionFw Integer required,
+	properPositionOmf Integer required,
+	properPositionDmf Integer required,
+	properPositionDf Integer required,
+	characterId Integer required,
+	nickName TextBlob required,
+	teamId Integer required,
+	nationalityId Integer required,
+	rarity Integer required,
+	attribute Integer required,
+	thumbnailAssetsId Integer required,
+	cardIllustAssetsId Integer required,
+	playableAssetsId Integer required,
+	teamEffectId Integer,
+	triggerEffectId Integer,
+	maxActionSlot Integer required,
+	initialActionId1 Integer,
+	initialActionId2 Integer,
+	initialActionId3 Integer,
+	initialActionId4 Integer,
+	initialActionId5 Integer,
+	initialStamina Integer required,
+	initialDribble Integer required,
+	initialShoot Integer required,
+	initialPass Integer required,
+	initialTackle Integer required,
+	initialBlock Integer required,
+	initialIntercept Integer required,
+	initialSpeed Integer required,
+	initialPower Integer required,
+	initialTechnique Integer required,
+	initialPunching Integer required,
+	initialCatching Integer required,
+	maxStamina Integer required,
+	maxDribble Integer required,
+	maxShoot Integer required,
+	maxPass Integer required,
+	maxTackle Integer required,
+	maxBlock Integer required,
+	maxIntercept Integer required,
+	maxSpeed Integer required,
+	maxPower Integer required,
+	maxTechnique Integer required,
+	maxPunching Integer required,
+	maxCatching Integer required,
+	maxPlusDribble Integer required,
+	maxPlusShoot Integer required,
+	maxPlusPass Integer required,
+	maxPlusTackle Integer required,
+	maxPlusBlock Integer required,
+	maxPlusIntercept Integer required,
+	maxPlusSpeed Integer required,
+	maxPlusPower Integer required,
+	maxPlusTechnique Integer required,
+	maxPlusPunching Integer required,
+	maxPlusCatching Integer required,
+	highBallBonus Integer required,
+	lowBallBonus Integer required,
+	isDropOnly Integer required,
+	sellCoinGroupNum Integer required,
+	sellMedalId Integer,
+	characterBookId Integer required,
+	bookNo Integer required,
+	isShowBook Integer required,
+	levelGroupId Integer required,
+	startAt Integer
+}
+
+entity MPowerupActionSkillCost {
+	actionRarity Integer required,
+	actionLevel Integer required,
+	cost Integer required
+}
+
+entity MPvpGrade {
+	waveId Integer required,
+	grade Integer required,
+	isHigher Integer required,
+	isLower Integer required,
+	gradeName TextBlob required,
+	look Integer required,
+	upRequirementId Integer,
+	downRequirementId Integer,
+	winPoint Integer required,
+	losePoint Integer required,
+	gradeUpSerif TextBlob required,
+	gradeDownSerif TextBlob required,
+	gradeUpCharaAssetName TextBlob required,
+	gradeDownCharaAssetName TextBlob required,
+	gradeUpVoiceCharaId TextBlob required,
+	gradeDownVoiceCharaId TextBlob required,
+	totalParameterRangeUpper Integer required,
+	totalParameterRangeLower Integer required
+}
+
+entity MPvpGradeRequirement {
+	id Integer required,
+	upDescription TextBlob required,
+	downDescription TextBlob required,
+	targetType Integer required,
+	targetWave Integer required,
+	targetLowerGrade Integer required,
+	targetPoint Integer required
+}
+
+entity MPvpPlayerStamp {
+	orderNum Integer required,
+	masterId Integer required
+}
+
+entity MPvpRankingReward {
+	id MPvpWave required,
+	waveId Integer required,
+	difficulty Integer required,
+	rankingFrom Integer required,
+	rankingTo Integer required,
+	rewardGroupId Integer required
+}
+
+entity MPvpRankingRewardGroup {
+	id Integer required,
+	groupId Integer required,
+	contentType Integer required,
+	contentId Integer,
+	contentAmount Integer required
+}
+
+entity MPvpRegulation {
+	id MMatchOption required,
+	startAt Integer required,
+	endAt Integer required,
+	matchOptionId Integer required,
+	deckConditionId Integer required,
+	ruleTutorialId Integer required
+}
+
+entity MPvpWatcherStamp {
+	orderNum Integer required,
+	masterId Integer required
+}
+
+entity MPvpWave {
+	id Integer required,
+	startAt Integer required,
+	endAt Integer required,
+	isRanking Integer required
+}
+
+entity MQuestAchievementGroup {
+	id Integer required,
+	groupId Integer required,
+	achievementType Integer required,
+	rank Integer required,
+	weight Integer required,
+	contentType Integer required,
+	contentId Integer,
+	contentAmount Integer required
+}
+
+entity MQuestClearRewardWeight {
+	id Integer required,
+	reward1 Integer required,
+	reward2 Integer required,
+	reward3 Integer required,
+	reward4 Integer required,
+	reward5 Integer required
+}
+
+entity MQuestCoop {
+	groupId Integer required,
+	effectRarity Integer required,
+	effectLevelFrom Integer required,
+	effectLevelTo Integer required,
+	choose1Weight Integer required,
+	choose2Weight Integer required
+}
+
+entity MQuestCoopReward {
+	id Integer required,
+	groupId Integer required,
+	weight Integer required,
+	rank Integer required,
+	contentType Integer required,
+	contentId Integer,
+	contentAmount Integer required
+}
+
+entity MQuestDropRateCampaignContent {
+	id Integer required,
+	groupId Integer required,
+	contentType Integer required,
+	contentId Integer,
+	rate Integer required
+}
+
+entity MQuestGoalReward {
+	id Integer required,
+	groupId Integer required,
+	weight Integer required,
+	assetName TextBlob required,
+	contentType Integer required,
+	contentId Integer,
+	contentAmount Integer required
+}
+
+entity MQuestRewardGroup {
+	id Integer required,
+	groupId Integer required,
+	rate Integer required,
+	rank Integer required,
+	contentType Integer required,
+	contentId Integer,
+	contentAmount Integer required
+}
+
+entity MQuestSpecialReward {
+	id Integer required,
+	groupId Integer required,
+	weight Integer required,
+	rank Integer required,
+	contentType Integer required,
+	contentId Integer,
+	contentAmount Integer required
+}
+
+entity MQuestStage {
+	id MQuestWorld required,
+	worldId Integer required,
+	number Integer required,
+	name TextBlob required,
+	imagePath TextBlob required,
+	characterThumbnailPath TextBlob required,
+	difficulty Integer required,
+	stageUnlockPattern Integer required,
+	storyOnly Integer required,
+	firstHalfNpcDeckId Integer required,
+	firstHalfEnvironmentId Integer required,
+	secondHalfNpcDeckId Integer required,
+	secondHalfEnvironmentId Integer required,
+	extraFirstHalfNpcDeckId Integer required,
+	consumeAp Integer required,
+	kickOffType Integer required,
+	matchMinute Integer required,
+	enableExtra Integer required,
+	enablePk Integer required,
+	aiLevel Integer required,
+	startAtSecondHalf Integer required,
+	startScore Integer required,
+	startScoreOpponent Integer required,
+	conditionId Integer,
+	optionId Integer,
+	deckConditionId Integer
+}
+
+entity MQuestStageCondition {
+	id Integer required,
+	successConditionType Integer required,
+	successConditionDetailType Integer,
+	successConditionValue Integer required,
+	targetCharacterGroupId Integer,
+	failureConditionType Integer
+}
+
+entity MQuestStageConditionDescription {
+	id Integer required,
+	successConditionType Integer required,
+	successConditionDetailTypeValue Integer required,
+	hasExistTargetCharacterGroup Integer required,
+	hasSuccessConditionValueOneOnly Integer required,
+	failureConditionTypeValue Integer required,
+	description TextBlob required
+}
+
+entity MQuestStageReward {
+	stageId Integer required,
+	exp Integer required,
+	coin Integer required,
+	guildPoint Integer required,
+	clearRewardGroupId Integer required,
+	clearRewardWeightId Integer,
+	achievementRewardGroupId Integer required,
+	coopGroupId Integer required,
+	specialRewardGroupId Integer,
+	specialRewardAmount Integer required
+}
+
+entity MQuestTicket {
+	id Integer required,
+	name TextBlob required,
+	shortName TextBlob required,
+	description TextBlob required,
+	thumbnailAsset TextBlob required
+}
+
+entity MQuestTsubasaPointReward {
+	stageId Integer required,
+	tsubasaPoint Integer required,
+	contentType Integer required,
+	contentId Integer,
+	contentAmount Integer required
+}
+
+entity MQuestWorld {
+	id Integer required,
+	number Integer required,
+	name TextBlob required,
+	startAt Integer required,
+	imagePath TextBlob required,
+	backgroundImagePath TextBlob required,
+	description TextBlob required,
+	stageUnlockPattern Integer required,
+	specialRewardContentType Integer,
+	specialRewardContentId Integer,
+	isEnableCoop Integer required
+}
+
+entity MRecommendFormationFilter {
+	id Integer required,
+	filterType Integer required,
+	name TextBlob required
+}
+
+entity MRecommendFormationFilterElement {
+	id Integer required,
+	filterType Integer required,
+	elementId Integer required,
+	name TextBlob required
+}
+
+entity MRecommendShopMessage {
+	id Integer required,
+	message TextBlob required,
+	hasSalesPeriod Integer required
+}
+
+entity MRegulatedLeagueRankingReward {
+	id Integer required,
+	regulatedLeagueId Integer required,
+	leagueHierarchy Integer required,
+	rankTo Integer required,
+	rewardGroupId Integer required
+}
+
+entity MRegulationMatchTutorialMessage {
+	ruleId Integer required,
+	orderNum Integer required,
+	position Integer required,
+	message TextBlob required,
+	assetName TextBlob required,
+	title TextBlob required
+}
+
+entity MRivalEncountCutin {
+	id Integer required,
+	offenseCharacterId Integer required,
+	offenseTeamId Integer,
+	defenseCharacterId Integer required,
+	defenseTeamId Integer,
+	cutinType Integer required,
+	chapter1Text TextBlob,
+	chapter1SoundEvent TextBlob,
+	chapter2Text TextBlob,
+	chapter2SoundEvent TextBlob
+}
+
+entity MSceneTutorialMessage {
+	target Integer required,
+	orderNum Integer required,
+	position Integer required,
+	message TextBlob required,
+	assetName TextBlob required,
+	title TextBlob required
+}
+
+entity MSellCardCoin {
+	groupNum Integer required,
+	level Integer required,
+	coin Integer required
+}
+
+entity MSellCardMedal {
+	id Integer required,
+	medalId Integer required,
+	amount Integer required
+}
+
+entity MShoot {
+	id Integer required,
+	angleDecayType Integer required,
+	shootOrbit Integer required,
+	judgementId Integer required
+}
+
+entity MSituation {
+	id Integer required,
+	kickoff Integer required,
+	penaltyKick Integer required,
+	matchInterval Integer required,
+	outOfPlay Integer required,
+	foul Integer required,
+	goal Integer required,
+	score Integer required,
+	time Integer required
+}
+
+entity MSituationAnnounce {
+	situationId Integer required,
+	groupId Integer required
+}
+
+entity MSoundBank {
+	path TextBlob required,
+	pf TextBlob required,
+	version Integer required,
+	fileSize Integer required
+}
+
+entity MSoundBankEvent {
+	path TextBlob required,
+	name TextBlob required,
+	eventId TextBlob required
+}
+
+entity MStageStory {
+	stageId Integer required,
+	eventType Integer required,
+	mainStoryAsset TextBlob,
+	kickoffStoryAsset TextBlob,
+	halftimeStoryAsset TextBlob,
+	resultStoryAsset TextBlob
+}
+
+entity MStamp {
+	id Integer required,
+	name TextBlob required,
+	thumbnailAsset TextBlob required,
+	soundEvent TextBlob,
+	description TextBlob required
+}
+
+entity MStoreReviewUrl {
+	platform Integer required,
+	url TextBlob required
+}
+
+entity MStoryResourceMapping {
+	lang Integer required,
+	scriptName TextBlob required,
+	ids TextBlob required
+}
+
+entity MTargetActionGroup {
+	id MAction required,
+	groupId Integer required,
+	actionId Integer required
+}
+
+entity MTargetActionTypeGroup {
+	id Integer required,
+	groupId Integer required,
+	commandType Integer required
+}
+
+entity MTargetCharacterGroup {
+	id MCharacter required,
+	groupId Integer required,
+	characterId Integer required
+}
+
+entity MTargetFormationGroup {
+	id MFormation required,
+	groupId Integer required,
+	formationId Integer required
+}
+
+entity MTargetNationalityGroup {
+	id MNationality required,
+	groupId Integer required,
+	nationalityId Integer required
+}
+
+entity MTargetPlayableCardGroup {
+	id MPlayableCard required,
+	groupId Integer required,
+	cardId Integer required,
+	isShowThumbnail Integer required
+}
+
+entity MTargetRarityGroup {
+	id Integer required,
+	groupId Integer required,
+	cardRarity Integer required
+}
+
+entity MTargetTeamGroup {
+	id MTeam required,
+	groupId Integer required,
+	teamId Integer required
+}
+
+entity MTargetTriggerEffectGroup {
+	id MTriggerEffectBase required,
+	groupId Integer required,
+	triggerEffectId Integer required
+}
+
+entity MTeam {
+	id Integer required,
+	name TextBlob required
+}
+
+entity MTeamEffectBase {
+	id MPassiveEffectRange required,
+	name TextBlob required,
+	rarity Integer required,
+	effectValueMin Integer required,
+	effectValueMax Integer required,
+	triggerProbabilityMin Integer required,
+	triggerProbabilityMax Integer required,
+	effectId Integer required,
+	effectValueMin2 Integer required,
+	effectValueMax2 Integer required,
+	triggerProbabilityMin2 Integer required,
+	triggerProbabilityMax2 Integer required,
+	effectId2 Integer,
+	description TextBlob required
+}
+
+entity MTeamEffectLevel {
+	rarity Integer required,
+	level Integer required,
+	exp Integer required
+}
+
+entity MTeamEffectRarity {
+	rarity Integer required,
+	name TextBlob required,
+	maxLevel Integer required
+}
+
+entity MTicketQuestStage {
+	id MTicketQuestWorld required,
+	worldId Integer required,
+	number Integer required,
+	name TextBlob required,
+	ticketId Integer required,
+	ticketAmount Integer required,
+	imagePath TextBlob required,
+	characterThumbnailPath TextBlob required,
+	difficulty Integer required,
+	stageUnlockPattern Integer required,
+	storyOnly Integer required,
+	firstHalfNpcDeckId Integer required,
+	firstHalfEnvironmentId Integer required,
+	secondHalfNpcDeckId Integer required,
+	secondHalfEnvironmentId Integer required,
+	extraFirstHalfNpcDeckId Integer required,
+	extraSecondHalfNpcDeckId Integer required,
+	consumeAp Integer required,
+	kickOffType Integer required,
+	matchMinute Integer required,
+	enableExtra Integer required,
+	enablePk Integer required,
+	aiLevel Integer required,
+	startAtSecondHalf Integer required,
+	startScore Integer required,
+	startScoreOpponent Integer required,
+	conditionId Integer,
+	optionId Integer,
+	deckConditionId Integer
+}
+
+entity MTicketQuestStageReward {
+	stageId Integer required,
+	exp Integer required,
+	coin Integer required,
+	guildPoint Integer required,
+	clearRewardGroupId Integer required,
+	clearRewardWeightId Integer required,
+	achievementRewardGroupId Integer required,
+	coopGroupId Integer required,
+	specialRewardGroupId Integer,
+	specialRewardAmount Integer required,
+	goalRewardGroupId Integer
+}
+
+entity MTicketQuestTsubasaPointReward {
+	stageId Integer required,
+	tsubasaPoint Integer required,
+	contentType Integer required,
+	contentId Integer,
+	contentAmount Integer required
+}
+
+entity MTicketQuestWorld {
+	id Integer required,
+	setId Integer required,
+	number Integer required,
+	name TextBlob required,
+	imagePath TextBlob required,
+	description TextBlob required,
+	stageUnlockPattern Integer required,
+	specialRewardContentType Integer,
+	specialRewardContentId Integer,
+	isEnableCoop Integer required,
+	isHideDoNotHavingTicket Integer required
+}
+
+entity MTimeattackQuestStage {
+	id MTimeattackQuestWorld required,
+	worldId Integer required,
+	number Integer required,
+	startAt Integer required,
+	name TextBlob required,
+	kickoffDescription TextBlob required,
+	imagePath TextBlob required,
+	characterThumbnailPath TextBlob required,
+	difficulty Integer required,
+	stageUnlockPattern Integer required,
+	storyOnly Integer required,
+	firstHalfNpcDeckId Integer required,
+	firstHalfEnvironmentId Integer required,
+	secondHalfNpcDeckId Integer required,
+	secondHalfEnvironmentId Integer required,
+	extraFirstHalfNpcDeckId Integer required,
+	consumeAp Integer required,
+	ticketId Integer,
+	ticketAmount Integer required,
+	kickOffType Integer required,
+	matchMinute Integer required,
+	enableExtra Integer required,
+	enablePk Integer required,
+	aiLevel Integer required,
+	startAtSecondHalf Integer required,
+	startScore Integer required,
+	startScoreOpponent Integer required,
+	conditionId Integer,
+	optionId Integer,
+	deckConditionId Integer,
+	shortName TextBlob required
+}
+
+entity MTimeattackQuestStageReward {
+	stageId Integer required,
+	exp Integer required,
+	coin Integer required,
+	guildPoint Integer required,
+	clearRewardGroupId Integer required,
+	clearRewardWeightId Integer required,
+	achievementRewardGroupId Integer required,
+	coopGroupId Integer required,
+	specialRewardGroupId Integer,
+	specialRewardAmount Integer required,
+	goalRewardGroupId Integer
+}
+
+entity MTimeattackQuestWorld {
+	id Integer required,
+	setId Integer required,
+	number Integer required,
+	name TextBlob required,
+	imagePath TextBlob required,
+	backgroundImagePath TextBlob required,
+	description TextBlob required,
+	stageUnlockPattern Integer required,
+	arousalBanner TextBlob,
+	specialRewardContentType Integer,
+	specialRewardContentId Integer,
+	isEnableCoop Integer required
+}
+
+entity MTimeattackRankingReward {
+	eventId Integer required,
+	rankingFrom Integer required,
+	rankingTo Integer required,
+	rewardGroupId Integer required
+}
+
+entity MTimeattackRankingRewardGroup {
+	id Integer required,
+	groupId Integer required,
+	contentType Integer required,
+	contentId Integer,
+	contentAmount Integer required
+}
+
+entity MTips {
+	id Integer required,
+	priority Integer required,
+	title TextBlob required,
+	description TextBlob required,
+	imageAssetName TextBlob required,
+	colorType Integer required,
+	isTips Integer required,
+	startAt Integer required,
+	endAt Integer required
+}
+
+entity MTrainingCard {
+	id MCardThumbnailAssets required,
+	name TextBlob required,
+	shortName TextBlob required,
+	description TextBlob required,
+	rarity Integer required,
+	attribute Integer required,
+	gainExp Integer required,
+	coin Integer required,
+	sellMedalId Integer,
+	plusDribble Integer required,
+	plusShoot Integer required,
+	plusPass Integer required,
+	plusTackle Integer required,
+	plusBlock Integer required,
+	plusIntercept Integer required,
+	plusSpeed Integer required,
+	plusPower Integer required,
+	plusTechnique Integer required,
+	plusPunching Integer required,
+	plusCatching Integer required,
+	thumbnailAssetsId Integer required,
+	cardIllustAssetsId Integer required
+}
+
+entity MTrainingCost {
+	rarity Integer required,
+	level Integer required,
+	cost Integer required
+}
+
+entity MTriggerEffectBase {
+	id MTriggerEffectRange required,
+	name TextBlob required,
+	rarity Integer required,
+	effectValue Integer required,
+	triggerProbability Integer required,
+	targetCardParameter Integer,
+	effectId Integer required,
+	description TextBlob required
+}
+
+entity MTriggerEffectRange {
+	id Integer required,
+	effectType Integer required,
+	targetPositionGk Integer required,
+	targetPositionFw Integer required,
+	targetPositionOmf Integer required,
+	targetPositionDmf Integer required,
+	targetPositionDf Integer required,
+	targetAttribute Integer,
+	targetNationalityGroupId Integer,
+	targetTeamGroupId Integer,
+	targetCharacterGroupId Integer,
+	targetFormationGroupId Integer,
+	targetActionCommand Integer
+}
+
+entity MTsubasaPoint {
+	matchType Integer required,
+	pointType Integer required,
+	calcType Integer required,
+	aValue Integer required,
+	bValue Integer required,
+	orderNum Integer required
+}
+
+entity MTutorialMessage {
+	step Integer required,
+	orderNum Integer required,
+	position Integer required,
+	message TextBlob required
+}
+
+entity MUniformBottom {
+	id Integer required,
+	name TextBlob required,
+	shortName TextBlob required,
+	menuName TextBlob required,
+	modelId Integer required,
+	thumbnailAssetName TextBlob required,
+	uniformType Integer required,
+	isDefault Integer required,
+	orderNum Integer required,
+	description TextBlob required
+}
+
+entity MUniformOriginalSet {
+	id Integer required,
+	name TextBlob required,
+	shortName TextBlob required,
+	menuName TextBlob required,
+	upModelId Integer required,
+	bottomModelId Integer required,
+	thumbnailAssetName TextBlob required,
+	uniformType Integer required,
+	isDefault Integer required,
+	orderNum Integer required,
+	description TextBlob required
+}
+
+entity MUniformUp {
+	id Integer required,
+	name TextBlob required,
+	shortName TextBlob required,
+	menuName TextBlob required,
+	modelId Integer required,
+	thumbnailAssetName TextBlob required,
+	uniformType Integer required,
+	isDefault Integer required,
+	orderNum Integer required,
+	description TextBlob required
+}
+
+entity MUserPolicyUpdateDate {
+	id Integer required,
+	updateDate Integer required
+}
+
+entity MUserRank {
+	rank Integer required,
+	exp Integer required,
+	questAp Integer required,
+	maxFriendCount Integer required,
+	rankupSerif TextBlob required,
+	charaAssetName TextBlob required,
+	voiceCharaId TextBlob required
+}
+
+entity MWeeklyQuestStage {
+	id MWeeklyQuestWorld required,
+	worldId Integer required,
+	number Integer required,
+	name TextBlob required,
+	imagePath TextBlob required,
+	characterThumbnailPath TextBlob required,
+	difficulty Integer required,
+	stageUnlockPattern Integer required,
+	storyOnly Integer required,
+	firstHalfNpcDeckId Integer required,
+	firstHalfEnvironmentId Integer required,
+	secondHalfNpcDeckId Integer required,
+	secondHalfEnvironmentId Integer required,
+	extraFirstHalfNpcDeckId Integer required,
+	extraSecondHalfNpcDeckId Integer required,
+	consumeAp Integer required,
+	kickOffType Integer required,
+	matchMinute Integer required,
+	enableExtra Integer required,
+	enablePk Integer required,
+	aiLevel Integer required,
+	startAtSecondHalf Integer required,
+	startScore Integer required,
+	startScoreOpponent Integer required,
+	conditionId Integer,
+	optionId Integer,
+	deckConditionId Integer
+}
+
+entity MWeeklyQuestStageReward {
+	stageId Integer required,
+	exp Integer required,
+	coin Integer required,
+	guildPoint Integer required,
+	clearRewardGroupId Integer required,
+	clearRewardWeightId Integer required,
+	achievementRewardGroupId Integer required,
+	coopGroupId Integer required,
+	specialRewardGroupId Integer,
+	specialRewardAmount Integer required,
+	goalRewardGroupId Integer
+}
+
+entity MWeeklyQuestTsubasaPointReward {
+	stageId Integer required,
+	tsubasaPoint Integer required,
+	contentType Integer required,
+	contentId Integer,
+	contentAmount Integer required
+}
+
+entity MWeeklyQuestWorld {
+	id Integer required,
+	setId Integer required,
+	number Integer required,
+	name TextBlob required,
+	imagePath TextBlob required,
+	description TextBlob required,
+	stageUnlockPattern Integer required,
+	arousalBanner TextBlob,
+	specialRewardContentType Integer,
+	specialRewardContentId Integer,
+	isEnableCoop Integer required
+}
+
+
+
+// Relations
+relationship ManyToOne {
+	MAchievement{id required} to MMission{mAchievement}
+}
+
+relationship ManyToOne {
+	MActionSkillHolderCardContent{id required} to MCharacter{mActionSkillHolderCardContent}
+}
+
+relationship ManyToOne {
+	MAdventQuestStage{id required} to MAdventQuestWorld{mAdventQuestStage}
+}
+
+relationship ManyToOne {
+	MArousal{id required} to MPlayableCard{mArousal}
+}
+
+relationship ManyToOne {
+	MCardPowerupActionSkill{id required} to MCardThumbnailAssets{mCardPowerupActionSkill}
+}
+
+relationship ManyToOne {
+	MChallengeQuestStage{id required} to MChallengeQuestWorld{mChallengeQuestStage}
+}
+
+relationship ManyToOne {
+	MCombinationCutPosition{id required} to MCharacter{mCombinationCutPosition}
+}
+
+relationship ManyToOne {
+	MDummyEmblem{id required} to MEmblemParts{mDummyEmblem}
+}
+
+relationship ManyToOne {
+	MDummyOpponent{id required} to MNpcDeck{mDummyOpponent}
+}
+
+relationship ManyToOne {
+	MFormation{id required} to MPassiveEffectRange{mFormation}
+}
+
+relationship ManyToOne {
+	MGuerillaQuestStage{id required} to MGuerillaQuestWorld{mGuerillaQuestStage}
+}
+
+relationship ManyToOne {
+	MGuildMission{id required} to MMissionReward{mGuildMission}
+}
+
+relationship ManyToOne {
+	MLeagueRegulation{id required} to MMatchOption{mLeagueRegulation}
+}
+
+relationship ManyToOne {
+	MLuckWeeklyQuestStage{id required} to MLuckWeeklyQuestWorld{mLuckWeeklyQuestStage}
+}
+
+relationship ManyToOne {
+	MMarathonQuestStage{id required} to MMarathonQuestWorld{mMarathonQuestStage}
+}
+
+relationship ManyToOne {
+	MMatchOption{id required} to MPassiveEffectRange{mMatchOption}
+}
+
+relationship ManyToOne {
+	MMatchResultCutin{id required} to MCharacter{mMatchResultCutin}
+}
+
+relationship ManyToOne {
+	MMission{id required} to MMissionReward{mMission}
+}
+
+relationship ManyToOne {
+	MNpcCard{id required} to MCharacter{mNpcCard}
+}
+
+relationship ManyToOne {
+	MNpcDeck{id required} to MFormation{mNpcDeck}
+}
+
+relationship ManyToOne {
+	MPlayableCard{id required} to MModelCard{mPlayableCard}
+}
+
+relationship ManyToOne {
+	MPvpRankingReward{id required} to MPvpWave{mPvpRankingReward}
+}
+
+relationship ManyToOne {
+	MPvpRegulation{id required} to MMatchOption{mPvpRegulation}
+}
+
+relationship ManyToOne {
+	MQuestStage{id required} to MQuestWorld{mQuestStage}
+}
+
+relationship ManyToOne {
+	MTargetActionGroup{id required} to MAction{mTargetActionGroup}
+}
+
+relationship ManyToOne {
+	MTargetCharacterGroup{id required} to MCharacter{mTargetCharacterGroup}
+}
+
+relationship ManyToOne {
+	MTargetFormationGroup{id required} to MFormation{mTargetFormationGroup}
+}
+
+relationship ManyToOne {
+	MTargetNationalityGroup{id required} to MNationality{mTargetNationalityGroup}
+}
+
+relationship ManyToOne {
+	MTargetPlayableCardGroup{id required} to MPlayableCard{mTargetPlayableCardGroup}
+}
+
+relationship ManyToOne {
+	MTargetTeamGroup{id required} to MTeam{mTargetTeamGroup}
+}
+
+relationship ManyToOne {
+	MTargetTriggerEffectGroup{id required} to MTriggerEffectBase{mTargetTriggerEffectGroup}
+}
+
+relationship ManyToOne {
+	MTeamEffectBase{id required} to MPassiveEffectRange{mTeamEffectBase}
+}
+
+relationship ManyToOne {
+	MTicketQuestStage{id required} to MTicketQuestWorld{mTicketQuestStage}
+}
+
+relationship ManyToOne {
+	MTimeattackQuestStage{id required} to MTimeattackQuestWorld{mTimeattackQuestStage}
+}
+
+relationship ManyToOne {
+	MTrainingCard{id required} to MCardThumbnailAssets{mTrainingCard}
+}
+
+relationship ManyToOne {
+	MTriggerEffectBase{id required} to MTriggerEffectRange{mTriggerEffectBase}
+}
+
+relationship ManyToOne {
+	MWeeklyQuestStage{id required} to MWeeklyQuestWorld{mWeeklyQuestStage}
+}
+
+
+
+// Options
+service * with serviceClass
+paginate * with pagination
+dto * with mapstruct
+filter *
+

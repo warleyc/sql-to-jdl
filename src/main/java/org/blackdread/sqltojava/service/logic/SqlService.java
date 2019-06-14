@@ -90,35 +90,9 @@ public class SqlService {
             .orElseThrow(() -> new IllegalArgumentException("Column is not a foreign key"));
     }
 
-    @Cacheable("SqlService.isEnumTable")
-    public boolean isEnumTable(final String tableName) {
-        final List<ColumnInformation> table = informationSchemaService.getFullColumnInformationOfTable(tableName);
 
-        if (table.size() != 2)
-            return false;
 
-        for (final ColumnInformation column : table) {
-            // Our design contract define that id and code/name is an enum table so logic is put here
-            if (!column.getName().equalsIgnoreCase("id") && (!column.getName().equalsIgnoreCase("code") && !column.getName().equalsIgnoreCase("name")))
-                return false;
-        }
 
-        return true;
-    }
-
-    /**
-     * Check if the column name passed from the table name specified is referencing an enum table
-     *
-     * @param tableName  Table containing the FK column
-     * @param columnName FK column that reference the enum table
-     * @return True if this column name is referencing an enum table
-     */
-    @Cacheable("SqlService.isForeignKeyFromAnEnumTable")
-    public boolean isForeignKeyFromAnEnumTable(final String tableName, final String columnName) {
-        if (!isForeignKey(tableName, columnName))
-            return false;
-        return isEnumTable(SqlUtils.removeIdFromEnd(columnName));
-    }
 
     /**
      * @param tableName  Table to check
